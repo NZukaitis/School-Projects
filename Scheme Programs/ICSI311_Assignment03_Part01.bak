@@ -1,0 +1,13 @@
+#|
+Returns the absolute value of a list of integers.
+@author Nicholas Zukaitis
+@param original_list is a list of integers before the absolute value operation.
+@param new_list is a list containing the absolute values of the integers in original_list.
+|#
+(define (abs_value original_list new_list)
+  (cond
+    ((null? original_list) new_list)
+    ((negative? (car original_list)) (abs_value (cdr original_list) (cons new_list (* (car original_list) -1) ) ) )
+    ((positive? (car original_list)) (abs_value (cdr original_list) (cons new_list (car original_list) ) ) )
+    )
+  )

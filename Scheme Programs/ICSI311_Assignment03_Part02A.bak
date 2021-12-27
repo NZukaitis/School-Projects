@@ -1,0 +1,8 @@
+;delete all instances of a key
+(define (delete items element)
+  (cond
+    ((null? items) '())
+    ((equal? (car items) element) (delete (cdr items) element))
+    (else (append (list (car items)) (delete (cdr items) element)))
+    )
+  )
